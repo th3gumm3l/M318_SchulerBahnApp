@@ -65,7 +65,6 @@
             // Stationen_btn
             // 
             this.Stationen_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Stationen_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Stationen_btn.BackColor = System.Drawing.SystemColors.Control;
             this.Stationen_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.Stationen_btn.FlatAppearance.BorderSize = 0;

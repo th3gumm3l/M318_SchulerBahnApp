@@ -24,5 +24,10 @@ namespace SwissTransportGUI
         {
             StartseiteForm.Show();
         }
+
+        private void sMainSearch_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
