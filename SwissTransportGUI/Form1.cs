@@ -1,10 +1,18 @@
 namespace SwissTransportGUI
 {
-    public partial class Form1 : Form
+    public partial class StartseiteForm : Form
     {
-        public Form1()
+        public StartseiteForm()
         {
             InitializeComponent();
+        }
+
+        private void Verbindungen_btn_Click(object sender, EventArgs e)
+        {
+            var verbindungForm = new VerbindungForm(this);
+            verbindungForm.Show();
+
+            this.Hide();
         }
     }
 }
