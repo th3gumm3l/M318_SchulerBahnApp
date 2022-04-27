@@ -55,6 +55,28 @@
             return this.GetObject<Connections>(uri);
         }
 
+
+        /// <summary>
+        /// Gibt die die Verbindungen der einzelnen Station an
+        /// </summary>
+        /// <param name="fromStation"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public Connections GetStationConnections(string fromStation)
+        {
+            
+
+            if (string.IsNullOrEmpty(fromStation))
+            {
+                throw new ArgumentNullException(nameof(fromStation));
+            }
+
+            var uri = new Uri($"{WebApiHost}connections?from={fromStation}");
+            return this.GetObject<Connections>(uri);
+        }
+
+
+
         public void Dispose()
         {
             this.httpClient?.Dispose();

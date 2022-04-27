@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SwissTransport.Core;
+using SwissTransport.Models;
 
 namespace SwissTransportGUI
 {
@@ -18,6 +20,8 @@ namespace SwissTransportGUI
             StartseiteForm = startseiteForm;
         }
 
+        ITransport transport = new Transport();
+
         public StartseiteForm StartseiteForm { get; }
 
         private void StationForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -27,6 +31,19 @@ namespace SwissTransportGUI
 
         private void sMainSearch_btn_Click(object sender, EventArgs e)
         {
+            sSuchanzeigen_dgv.Rows.Clear();
+
+            var ConnectionsList = transport.GetStationConnections(sStationsuchen_cbx.Text);
+
+            foreach (Connection connectionitems in ConnectionsList.ConnectionList)
+            {
+                sSuchanzeigen_dgv.Rows.Add(
+                    connectionitems.From.Station.Name + "\n" + connectionitems.From.Departure,
+                    connectionitems.To.Station.Name + "\n" + connectionitems.To.Arrival,
+                    connectionitems.Duration
+
+                    );
+            }
 
         }
     }

@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.sMainSearch_btn = new System.Windows.Forms.Button();
-            this.Stationsuchen_cbx = new System.Windows.Forms.ComboBox();
+            this.sStationsuchen_cbx = new System.Windows.Forms.ComboBox();
             this.sSuchanzeigen_gpbx = new System.Windows.Forms.GroupBox();
             this.sSuchanzeigen_dgv = new System.Windows.Forms.DataGridView();
             this.Abfahrtsort_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.sMainSearch_btn);
-            this.panel1.Controls.Add(this.Stationsuchen_cbx);
+            this.panel1.Controls.Add(this.sStationsuchen_cbx);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -76,17 +76,17 @@
             this.sMainSearch_btn.UseVisualStyleBackColor = true;
             this.sMainSearch_btn.Click += new System.EventHandler(this.sMainSearch_btn_Click);
             // 
-            // Stationsuchen_cbx
+            // sStationsuchen_cbx
             // 
-            this.Stationsuchen_cbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sStationsuchen_cbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Stationsuchen_cbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Stationsuchen_cbx.FormattingEnabled = true;
-            this.Stationsuchen_cbx.Location = new System.Drawing.Point(415, 140);
-            this.Stationsuchen_cbx.Name = "Stationsuchen_cbx";
-            this.Stationsuchen_cbx.Size = new System.Drawing.Size(486, 36);
-            this.Stationsuchen_cbx.TabIndex = 0;
-            this.Stationsuchen_cbx.Text = "Station eingeben";
+            this.sStationsuchen_cbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sStationsuchen_cbx.FormattingEnabled = true;
+            this.sStationsuchen_cbx.Location = new System.Drawing.Point(415, 140);
+            this.sStationsuchen_cbx.Name = "sStationsuchen_cbx";
+            this.sStationsuchen_cbx.Size = new System.Drawing.Size(486, 36);
+            this.sStationsuchen_cbx.TabIndex = 0;
+            this.sStationsuchen_cbx.Text = "Station eingeben";
             // 
             // sSuchanzeigen_gpbx
             // 
@@ -102,7 +102,10 @@
             // 
             this.sSuchanzeigen_dgv.AllowUserToAddRows = false;
             this.sSuchanzeigen_dgv.AllowUserToDeleteRows = false;
+            this.sSuchanzeigen_dgv.AllowUserToResizeColumns = false;
+            this.sSuchanzeigen_dgv.AllowUserToResizeRows = false;
             this.sSuchanzeigen_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.sSuchanzeigen_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.sSuchanzeigen_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sSuchanzeigen_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Abfahrtsort_col,
@@ -113,7 +116,10 @@
             this.sSuchanzeigen_dgv.Name = "sSuchanzeigen_dgv";
             this.sSuchanzeigen_dgv.ReadOnly = true;
             this.sSuchanzeigen_dgv.RowHeadersWidth = 82;
+            this.sSuchanzeigen_dgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.sSuchanzeigen_dgv.RowTemplate.Height = 41;
+            this.sSuchanzeigen_dgv.RowTemplate.ReadOnly = true;
+            this.sSuchanzeigen_dgv.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.sSuchanzeigen_dgv.Size = new System.Drawing.Size(1285, 670);
             this.sSuchanzeigen_dgv.TabIndex = 0;
             // 
@@ -175,7 +181,7 @@
         #endregion
 
         private Panel panel1;
-        private ComboBox Stationsuchen_cbx;
+        private ComboBox sStationsuchen_cbx;
         private GroupBox sSuchanzeigen_gpbx;
         private DataGridView sSuchanzeigen_dgv;
         private DataGridViewTextBoxColumn Abfahrtsort_col;

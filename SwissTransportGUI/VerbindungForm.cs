@@ -28,6 +28,7 @@ namespace SwissTransportGUI
 
         private void vMainSearch_btn_Click(object sender, EventArgs e)
         {
+            vSuchanzeigen_dgv.Rows.Clear();
             var ConnectionsListe = transport.GetConnections(vSearchAbfahrtsOrt_cbx.Text, vSearchAnkunftsOrt_cbx.Text);
 
             foreach (Connection connectionitems in ConnectionsListe.ConnectionList)
