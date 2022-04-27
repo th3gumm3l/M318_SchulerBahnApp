@@ -14,5 +14,13 @@ namespace SwissTransportGUI
 
             this.Hide();
         }
+
+        private void Stationen_btn_Click(object sender, EventArgs e)
+        {
+            var stationForm = new StationForm(this);
+            stationForm.Show();
+
+            this.Hide();
+        }
     }
 }

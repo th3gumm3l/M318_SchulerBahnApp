@@ -76,6 +76,7 @@
             this.Stationen_btn.TabIndex = 2;
             this.Stationen_btn.Text = "Stationen suchen";
             this.Stationen_btn.UseVisualStyleBackColor = false;
+            this.Stationen_btn.Click += new System.EventHandler(this.Stationen_btn_Click);
             // 
             // StationinNähe_btn
             // 
