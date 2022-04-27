@@ -33,9 +33,9 @@ namespace SwissTransportGUI
             foreach (Connection connectionitems in ConnectionsListe.ConnectionList)
             {
                 vSuchanzeigen_dgv.Rows.Add(
-                    connectionitems.From.Station.Name,
-                    connectionitems.To.Station.Name,
-                    connectionitems.From.Departure,
+                    connectionitems.From.Station.Name + "\n" + connectionitems.From.Departure,
+                    connectionitems.To.Station.Name + "\n" + connectionitems.To.Arrival,
+                    connectionitems.Duration,
                     connectionitems.From.Platform,
                     connectionitems.From.Delay
                     );

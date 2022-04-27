@@ -68,6 +68,7 @@
             this.vSuchanzeigen_dgv.AllowUserToResizeColumns = false;
             this.vSuchanzeigen_dgv.AllowUserToResizeRows = false;
             this.vSuchanzeigen_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vSuchanzeigen_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.vSuchanzeigen_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vSuchanzeigen_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Abfahrt_col,
@@ -79,8 +80,10 @@
             this.vSuchanzeigen_dgv.Name = "vSuchanzeigen_dgv";
             this.vSuchanzeigen_dgv.ReadOnly = true;
             this.vSuchanzeigen_dgv.RowHeadersWidth = 82;
+            this.vSuchanzeigen_dgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.vSuchanzeigen_dgv.RowTemplate.Height = 41;
             this.vSuchanzeigen_dgv.RowTemplate.ReadOnly = true;
+            this.vSuchanzeigen_dgv.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.vSuchanzeigen_dgv.Size = new System.Drawing.Size(1842, 552);
             this.vSuchanzeigen_dgv.StandardTab = true;
             this.vSuchanzeigen_dgv.TabIndex = 0;
