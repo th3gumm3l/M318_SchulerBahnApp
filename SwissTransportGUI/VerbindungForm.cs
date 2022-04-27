@@ -29,6 +29,13 @@ namespace SwissTransportGUI
         private void vMainSearch_btn_Click(object sender, EventArgs e)
         {
             vSuchanzeigen_dgv.Rows.Clear();
+
+            //vSearchAbfahrtsOrt_cbx.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //vSearchAbfahrtsOrt_cbx.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            //vSearchAnkunftsOrt_cbx.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //vSearchAnkunftsOrt_cbx.AutoCompleteSource = AutoCompleteSource.ListItems;
+
             var ConnectionsListe = transport.GetConnections(vSearchAbfahrtsOrt_cbx.Text, vSearchAnkunftsOrt_cbx.Text);
 
             foreach (Connection connectionitems in ConnectionsListe.ConnectionList)
@@ -47,6 +54,14 @@ namespace SwissTransportGUI
         private void VerbindungForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             StartseiteForm.Show();
+        }
+
+        private void vSuchanzeigen_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (vSuchanzeigen_dgv.Columns[e.ColumnIndex].Name == "Teilen_colBtn")
+            {
+                //Mail Support
+            }
         }
     }
 }

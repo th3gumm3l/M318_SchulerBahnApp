@@ -31,17 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerbindungForm));
             this.vSuchanzeigen_gpbx = new System.Windows.Forms.GroupBox();
             this.vSuchanzeigen_dgv = new System.Windows.Forms.DataGridView();
+            this.Abfahrt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ankunft_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dauer_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gleis_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Verspätung_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Teilen_colBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.vMainSearch_btn = new System.Windows.Forms.Button();
             this.vdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.vSearchAnkunftsOrt_cbx = new System.Windows.Forms.ComboBox();
             this.vSearchAbfahrtsOrt_cbx = new System.Windows.Forms.ComboBox();
-            this.Abfahrt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ankunft_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dauer_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gleis_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Verspätung_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vSuchanzeigen_gpbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vSuchanzeigen_dgv)).BeginInit();
             this.panel1.SuspendLayout();
@@ -54,9 +55,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vSuchanzeigen_gpbx.Controls.Add(this.vSuchanzeigen_dgv);
             this.vSuchanzeigen_gpbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vSuchanzeigen_gpbx.Location = new System.Drawing.Point(12, 376);
+            this.vSuchanzeigen_gpbx.Location = new System.Drawing.Point(6, 176);
+            this.vSuchanzeigen_gpbx.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.vSuchanzeigen_gpbx.Name = "vSuchanzeigen_gpbx";
-            this.vSuchanzeigen_gpbx.Size = new System.Drawing.Size(1870, 612);
+            this.vSuchanzeigen_gpbx.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.vSuchanzeigen_gpbx.Size = new System.Drawing.Size(1007, 287);
             this.vSuchanzeigen_gpbx.TabIndex = 0;
             this.vSuchanzeigen_gpbx.TabStop = false;
             this.vSuchanzeigen_gpbx.Text = "Suchanzeigen";
@@ -69,87 +72,29 @@
             this.vSuchanzeigen_dgv.AllowUserToResizeRows = false;
             this.vSuchanzeigen_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vSuchanzeigen_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.vSuchanzeigen_dgv.BackgroundColor = System.Drawing.SystemColors.Control;
             this.vSuchanzeigen_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vSuchanzeigen_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Abfahrt_col,
             this.Ankunft_col,
             this.Dauer_col,
             this.Gleis_col,
-            this.Verspätung_col});
-            this.vSuchanzeigen_dgv.Location = new System.Drawing.Point(8, 38);
+            this.Verspätung_col,
+            this.Teilen_colBtn});
+            this.vSuchanzeigen_dgv.Location = new System.Drawing.Point(4, 18);
+            this.vSuchanzeigen_dgv.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.vSuchanzeigen_dgv.Name = "vSuchanzeigen_dgv";
             this.vSuchanzeigen_dgv.ReadOnly = true;
-            this.vSuchanzeigen_dgv.RowHeadersWidth = 82;
+            this.vSuchanzeigen_dgv.RowHeadersVisible = false;
+            this.vSuchanzeigen_dgv.RowHeadersWidth = 4;
             this.vSuchanzeigen_dgv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.vSuchanzeigen_dgv.RowTemplate.Height = 41;
             this.vSuchanzeigen_dgv.RowTemplate.ReadOnly = true;
             this.vSuchanzeigen_dgv.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.vSuchanzeigen_dgv.Size = new System.Drawing.Size(1842, 552);
+            this.vSuchanzeigen_dgv.Size = new System.Drawing.Size(992, 259);
             this.vSuchanzeigen_dgv.StandardTab = true;
             this.vSuchanzeigen_dgv.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.vMainSearch_btn);
-            this.panel1.Controls.Add(this.vdateTimePicker);
-            this.panel1.Controls.Add(this.vSearchAnkunftsOrt_cbx);
-            this.panel1.Controls.Add(this.vSearchAbfahrtsOrt_cbx);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1894, 370);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(631, 39);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Geben Sie ihre gewünschte Verbindung ein";
-            // 
-            // vMainSearch_btn
-            // 
-            this.vMainSearch_btn.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vMainSearch_btn.Location = new System.Drawing.Point(1570, 264);
-            this.vMainSearch_btn.Name = "vMainSearch_btn";
-            this.vMainSearch_btn.Size = new System.Drawing.Size(292, 68);
-            this.vMainSearch_btn.TabIndex = 4;
-            this.vMainSearch_btn.Text = "Suchen";
-            this.vMainSearch_btn.UseVisualStyleBackColor = true;
-            this.vMainSearch_btn.Click += new System.EventHandler(this.vMainSearch_btn_Click);
-            // 
-            // vdateTimePicker
-            // 
-            this.vdateTimePicker.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vdateTimePicker.Location = new System.Drawing.Point(1101, 154);
-            this.vdateTimePicker.Name = "vdateTimePicker";
-            this.vdateTimePicker.Size = new System.Drawing.Size(462, 39);
-            this.vdateTimePicker.TabIndex = 3;
-            // 
-            // vSearchAnkunftsOrt_cbx
-            // 
-            this.vSearchAnkunftsOrt_cbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vSearchAnkunftsOrt_cbx.FormattingEnabled = true;
-            this.vSearchAnkunftsOrt_cbx.Location = new System.Drawing.Point(620, 156);
-            this.vSearchAnkunftsOrt_cbx.Name = "vSearchAnkunftsOrt_cbx";
-            this.vSearchAnkunftsOrt_cbx.Size = new System.Drawing.Size(360, 36);
-            this.vSearchAnkunftsOrt_cbx.TabIndex = 2;
-            this.vSearchAnkunftsOrt_cbx.Text = "Ankunftsort";
-            // 
-            // vSearchAbfahrtsOrt_cbx
-            // 
-            this.vSearchAbfahrtsOrt_cbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vSearchAbfahrtsOrt_cbx.FormattingEnabled = true;
-            this.vSearchAbfahrtsOrt_cbx.Location = new System.Drawing.Point(121, 156);
-            this.vSearchAbfahrtsOrt_cbx.Name = "vSearchAbfahrtsOrt_cbx";
-            this.vSearchAbfahrtsOrt_cbx.Size = new System.Drawing.Size(360, 36);
-            this.vSearchAbfahrtsOrt_cbx.TabIndex = 1;
-            this.vSearchAbfahrtsOrt_cbx.Text = "Abfahrtsort";
+            this.vSuchanzeigen_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vSuchanzeigen_dgv_CellContentClick);
             // 
             // Abfahrt_col
             // 
@@ -194,15 +139,93 @@
             this.Verspätung_col.Name = "Verspätung_col";
             this.Verspätung_col.ReadOnly = true;
             // 
+            // Teilen_colBtn
+            // 
+            this.Teilen_colBtn.HeaderText = "Teilen";
+            this.Teilen_colBtn.Name = "Teilen_colBtn";
+            this.Teilen_colBtn.ReadOnly = true;
+            this.Teilen_colBtn.Text = "Teilen";
+            this.Teilen_colBtn.UseColumnTextForButtonValue = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.vMainSearch_btn);
+            this.panel1.Controls.Add(this.vdateTimePicker);
+            this.panel1.Controls.Add(this.vSearchAnkunftsOrt_cbx);
+            this.panel1.Controls.Add(this.vSearchAbfahrtsOrt_cbx);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1020, 173);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(308, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Geben Sie ihre gewünschte Verbindung ein";
+            // 
+            // vMainSearch_btn
+            // 
+            this.vMainSearch_btn.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vMainSearch_btn.Location = new System.Drawing.Point(845, 124);
+            this.vMainSearch_btn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.vMainSearch_btn.Name = "vMainSearch_btn";
+            this.vMainSearch_btn.Size = new System.Drawing.Size(157, 32);
+            this.vMainSearch_btn.TabIndex = 4;
+            this.vMainSearch_btn.Text = "Suchen";
+            this.vMainSearch_btn.UseVisualStyleBackColor = true;
+            this.vMainSearch_btn.Click += new System.EventHandler(this.vMainSearch_btn_Click);
+            // 
+            // vdateTimePicker
+            // 
+            this.vdateTimePicker.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vdateTimePicker.Location = new System.Drawing.Point(593, 72);
+            this.vdateTimePicker.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.vdateTimePicker.Name = "vdateTimePicker";
+            this.vdateTimePicker.Size = new System.Drawing.Size(251, 23);
+            this.vdateTimePicker.TabIndex = 3;
+            // 
+            // vSearchAnkunftsOrt_cbx
+            // 
+            this.vSearchAnkunftsOrt_cbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vSearchAnkunftsOrt_cbx.FormattingEnabled = true;
+            this.vSearchAnkunftsOrt_cbx.Location = new System.Drawing.Point(334, 73);
+            this.vSearchAnkunftsOrt_cbx.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.vSearchAnkunftsOrt_cbx.Name = "vSearchAnkunftsOrt_cbx";
+            this.vSearchAnkunftsOrt_cbx.Size = new System.Drawing.Size(196, 24);
+            this.vSearchAnkunftsOrt_cbx.TabIndex = 2;
+            this.vSearchAnkunftsOrt_cbx.Text = "Ankunftsort";
+            // 
+            // vSearchAbfahrtsOrt_cbx
+            // 
+            this.vSearchAbfahrtsOrt_cbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vSearchAbfahrtsOrt_cbx.FormattingEnabled = true;
+            this.vSearchAbfahrtsOrt_cbx.Location = new System.Drawing.Point(65, 73);
+            this.vSearchAbfahrtsOrt_cbx.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.vSearchAbfahrtsOrt_cbx.Name = "vSearchAbfahrtsOrt_cbx";
+            this.vSearchAbfahrtsOrt_cbx.Size = new System.Drawing.Size(196, 24);
+            this.vSearchAbfahrtsOrt_cbx.TabIndex = 1;
+            this.vSearchAbfahrtsOrt_cbx.Text = "Abfahrtsort";
+            // 
             // VerbindungForm
             // 
             this.AcceptButton = this.vMainSearch_btn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1894, 1009);
+            this.ClientSize = new System.Drawing.Size(1020, 473);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.vSuchanzeigen_gpbx);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "VerbindungForm";
             this.Text = "Schuler BahnApp";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerbindungForm_FormClosing);
@@ -229,5 +252,6 @@
         private DataGridViewTextBoxColumn Dauer_col;
         private DataGridViewTextBoxColumn Gleis_col;
         private DataGridViewTextBoxColumn Verspätung_col;
+        private DataGridViewButtonColumn Teilen_colBtn;
     }
 }

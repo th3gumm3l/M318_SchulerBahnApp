@@ -32,19 +32,19 @@ namespace SwissTransportGUI
         private void sMainSearch_btn_Click(object sender, EventArgs e)
         {
             sSuchanzeigen_dgv.Rows.Clear();
+            
+            var stationBoard = transport.GetStationBoard(sStationsuchen_cbx.Text, sStationsuchen_cbx.Text);
 
-            var ConnectionsList = transport.GetStationConnections(sStationsuchen_cbx.Text);
-
-            foreach (Connection connectionitems in ConnectionsList.ConnectionList)
+            foreach (StationBoard stationBoarditems in stationBoard.Entries)
             {
                 sSuchanzeigen_dgv.Rows.Add(
-                    connectionitems.From.Station.Name + "\n" + connectionitems.From.Departure,
-                    connectionitems.To.Station.Name + "\n" + connectionitems.To.Arrival,
-                    connectionitems.Duration
+
+                    stationBoarditems.To,
+                    stationBoarditems.Stop.Departure
+                    //Mehr Informationen hinzufügen
 
                     );
             }
-
         }
     }
 }
