@@ -35,6 +35,7 @@
             this.Ankunft_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumUhrzeit_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gleis_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Verspätung_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.vMainSearch_btn = new System.Windows.Forms.Button();
@@ -64,18 +65,22 @@
             // 
             this.vSuchanzeigen_dgv.AllowUserToAddRows = false;
             this.vSuchanzeigen_dgv.AllowUserToDeleteRows = false;
+            this.vSuchanzeigen_dgv.AllowUserToResizeColumns = false;
+            this.vSuchanzeigen_dgv.AllowUserToResizeRows = false;
             this.vSuchanzeigen_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vSuchanzeigen_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vSuchanzeigen_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Abfahrt_col,
             this.Ankunft_col,
             this.DatumUhrzeit_col,
-            this.Gleis_col});
+            this.Gleis_col,
+            this.Verspätung_col});
             this.vSuchanzeigen_dgv.Location = new System.Drawing.Point(8, 38);
             this.vSuchanzeigen_dgv.Name = "vSuchanzeigen_dgv";
             this.vSuchanzeigen_dgv.ReadOnly = true;
             this.vSuchanzeigen_dgv.RowHeadersWidth = 82;
             this.vSuchanzeigen_dgv.RowTemplate.Height = 41;
+            this.vSuchanzeigen_dgv.RowTemplate.ReadOnly = true;
             this.vSuchanzeigen_dgv.Size = new System.Drawing.Size(1842, 552);
             this.vSuchanzeigen_dgv.StandardTab = true;
             this.vSuchanzeigen_dgv.TabIndex = 0;
@@ -116,6 +121,13 @@
             this.Gleis_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Gleis_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // Verspätung_col
+            // 
+            this.Verspätung_col.HeaderText = "Verspätung";
+            this.Verspätung_col.MinimumWidth = 10;
+            this.Verspätung_col.Name = "Verspätung_col";
+            this.Verspätung_col.ReadOnly = true;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -143,7 +155,7 @@
             // vMainSearch_btn
             // 
             this.vMainSearch_btn.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vMainSearch_btn.Location = new System.Drawing.Point(1590, 284);
+            this.vMainSearch_btn.Location = new System.Drawing.Point(1570, 264);
             this.vMainSearch_btn.Name = "vMainSearch_btn";
             this.vMainSearch_btn.Size = new System.Drawing.Size(292, 68);
             this.vMainSearch_btn.TabIndex = 3;
@@ -181,6 +193,7 @@
             // 
             // VerbindungForm
             // 
+            this.AcceptButton = this.vMainSearch_btn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1894, 1009);
@@ -212,5 +225,6 @@
         private DataGridViewTextBoxColumn Ankunft_col;
         private DataGridViewTextBoxColumn DatumUhrzeit_col;
         private DataGridViewTextBoxColumn Gleis_col;
+        private DataGridViewTextBoxColumn Verspätung_col;
     }
 }
