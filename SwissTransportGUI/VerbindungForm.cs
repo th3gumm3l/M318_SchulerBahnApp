@@ -31,7 +31,7 @@ namespace SwissTransportGUI
         {
             vSuchanzeigen_dgv.Rows.Clear();
 
-            var ConnectionsListe = transport.GetConnections(vSearchAbfahrtsOrt_cbx.Text, vSearchAnkunftsOrt_cbx.Text);
+            var ConnectionsListe = transport.GetConnections(vSearchAbfahrtsOrt_cbx.Text, vSearchAnkunftsOrt_cbx.Text, datePicker.Value, timePicker.Value);
 
             foreach (Connection connectionitem in ConnectionsListe.ConnectionList)
             {

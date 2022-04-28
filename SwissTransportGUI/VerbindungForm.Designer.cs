@@ -38,9 +38,10 @@
             this.Verspätung_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teilen_colBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.vMainSearch_btn = new System.Windows.Forms.Button();
-            this.vdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.vSearchAnkunftsOrt_cbx = new System.Windows.Forms.ComboBox();
             this.vSearchAbfahrtsOrt_cbx = new System.Windows.Forms.ComboBox();
             this.vSuchanzeigen_gpbx.SuspendLayout();
@@ -98,7 +99,7 @@
             // 
             // Abfahrt_col
             // 
-            this.Abfahrt_col.HeaderText = "Abfahrtsort";
+            this.Abfahrt_col.HeaderText = "Abfahrt";
             this.Abfahrt_col.MinimumWidth = 10;
             this.Abfahrt_col.Name = "Abfahrt_col";
             this.Abfahrt_col.ReadOnly = true;
@@ -107,7 +108,7 @@
             // 
             // Ankunft_col
             // 
-            this.Ankunft_col.HeaderText = "Ankuftsort";
+            this.Ankunft_col.HeaderText = "Ankuft";
             this.Ankunft_col.MinimumWidth = 10;
             this.Ankunft_col.Name = "Ankunft_col";
             this.Ankunft_col.ReadOnly = true;
@@ -150,9 +151,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.timePicker);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.vMainSearch_btn);
-            this.panel1.Controls.Add(this.vdateTimePicker);
+            this.panel1.Controls.Add(this.datePicker);
             this.panel1.Controls.Add(this.vSearchAnkunftsOrt_cbx);
             this.panel1.Controls.Add(this.vSearchAbfahrtsOrt_cbx);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -162,6 +164,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1894, 369);
             this.panel1.TabIndex = 0;
+            // 
+            // timePicker
+            // 
+            this.timePicker.CustomFormat = "HH:mm";
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePicker.Location = new System.Drawing.Point(1341, 152);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(192, 39);
+            this.timePicker.TabIndex = 5;
+            this.timePicker.Value = new System.DateTime(2022, 4, 28, 15, 49, 0, 0);
             // 
             // label1
             // 
@@ -186,14 +199,17 @@
             this.vMainSearch_btn.UseVisualStyleBackColor = true;
             this.vMainSearch_btn.Click += new System.EventHandler(this.vMainSearch_btn_Click);
             // 
-            // vdateTimePicker
+            // datePicker
             // 
-            this.vdateTimePicker.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vdateTimePicker.Location = new System.Drawing.Point(1101, 154);
-            this.vdateTimePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.vdateTimePicker.Name = "vdateTimePicker";
-            this.vdateTimePicker.Size = new System.Drawing.Size(463, 39);
-            this.vdateTimePicker.TabIndex = 3;
+            this.datePicker.CustomFormat = "dd.MM.yyyy";
+            this.datePicker.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(1109, 152);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(177, 39);
+            this.datePicker.TabIndex = 3;
+            this.datePicker.Value = new System.DateTime(2022, 4, 28, 0, 0, 0, 0);
             // 
             // vSearchAnkunftsOrt_cbx
             // 
@@ -245,7 +261,7 @@
         private ComboBox vSearchAbfahrtsOrt_cbx;
         private ComboBox vSearchAnkunftsOrt_cbx;
         private Button vMainSearch_btn;
-        private DateTimePicker vdateTimePicker;
+        private DateTimePicker datePicker;
         private DataGridView vSuchanzeigen_dgv;
         private Label label1;
         private DataGridViewTextBoxColumn Abfahrt_col;
@@ -254,5 +270,6 @@
         private DataGridViewTextBoxColumn Gleis_col;
         private DataGridViewTextBoxColumn Verspätung_col;
         private DataGridViewButtonColumn Teilen_colBtn;
+        private DateTimePicker timePicker;
     }
 }
