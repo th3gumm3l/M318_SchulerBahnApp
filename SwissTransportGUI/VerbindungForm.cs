@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SwissTransport;
 using SwissTransport.Core;
 using SwissTransport.Models;
+using System.Net.Mail;
 
 namespace SwissTransportGUI
 {
@@ -30,22 +31,16 @@ namespace SwissTransportGUI
         {
             vSuchanzeigen_dgv.Rows.Clear();
 
-            //vSearchAbfahrtsOrt_cbx.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //vSearchAbfahrtsOrt_cbx.AutoCompleteSource = AutoCompleteSource.ListItems;
-
-            //vSearchAnkunftsOrt_cbx.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //vSearchAnkunftsOrt_cbx.AutoCompleteSource = AutoCompleteSource.ListItems;
-
             var ConnectionsListe = transport.GetConnections(vSearchAbfahrtsOrt_cbx.Text, vSearchAnkunftsOrt_cbx.Text);
 
-            foreach (Connection connectionitems in ConnectionsListe.ConnectionList)
+            foreach (Connection connectionitem in ConnectionsListe.ConnectionList)
             {
                 vSuchanzeigen_dgv.Rows.Add(
-                    connectionitems.From.Station.Name + "\n" + connectionitems.From.Departure,
-                    connectionitems.To.Station.Name + "\n" + connectionitems.To.Arrival,
-                    connectionitems.Duration,
-                    connectionitems.From.Platform,
-                    connectionitems.From.Delay
+                    connectionitem.From.Station.Name + "\n" + connectionitem.From.Departure,
+                    connectionitem.To.Station.Name + "\n" + connectionitem.To.Arrival,
+                    connectionitem.Duration,
+                    connectionitem.From.Platform,
+                    connectionitem.From.Delay
                     );
             }
         }
@@ -58,10 +53,23 @@ namespace SwissTransportGUI
 
         private void vSuchanzeigen_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (vSuchanzeigen_dgv.Columns[e.ColumnIndex].Name == "Teilen_colBtn")
+            if (vSuchanzeigen_dgv.Columns[e.ColumnIndex].Name != "Teilen_colBtn")
             {
-                //Mail Support
+                return;
             }
+
+            var row = vSuchanzeigen_dgv.Rows[e.RowIndex];
+
+            string Abfahrt = row.Cells[0].Value?.ToString();
+            string Ankunft = row.Cells[1].Value?.ToString();
+            string Dauer = row.Cells[2].Value?.ToString();
+            string Gleis = row.Cells[3].Value?.ToString();
+            string Verspätung = row.Cells[4].Value?.ToString();
+
+            Mailing mailing = new Mailing(Abfahrt, Ankunft, Dauer, Gleis, Verspätung);
+
+            mailing.OpenMailClientandFillIn();
         }
+
     }
 }

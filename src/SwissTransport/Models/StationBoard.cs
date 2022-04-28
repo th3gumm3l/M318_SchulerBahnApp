@@ -21,7 +21,5 @@ namespace SwissTransport.Models
 
         [JsonProperty("stop")]
         public Stop Stop { get; set; }
-
-        //Wie bei Stop mehr Informationen hinzufügen aus anderen Klassen
     }
 }

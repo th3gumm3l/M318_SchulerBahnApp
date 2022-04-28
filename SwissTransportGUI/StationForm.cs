@@ -35,14 +35,12 @@ namespace SwissTransportGUI
             
             var stationBoard = transport.GetStationBoard(sStationsuchen_cbx.Text, sStationsuchen_cbx.Text);
 
-            foreach (StationBoard stationBoarditems in stationBoard.Entries)
+            foreach (StationBoard stationBoarditem in stationBoard.Entries)
             {
                 sSuchanzeigen_dgv.Rows.Add(
 
-                    stationBoarditems.To,
-                    stationBoarditems.Stop.Departure
-                    //Mehr Informationen hinzufügen
-
+                    stationBoarditem.To,
+                    stationBoarditem.Stop.Departure
                     );
             }
         }
