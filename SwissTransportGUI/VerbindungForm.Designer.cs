@@ -221,6 +221,9 @@
             this.vSearchAnkunftsOrt_cbx.Size = new System.Drawing.Size(361, 36);
             this.vSearchAnkunftsOrt_cbx.TabIndex = 2;
             this.vSearchAnkunftsOrt_cbx.Text = "Ankunftsort";
+            this.vSearchAnkunftsOrt_cbx.Enter += new System.EventHandler(this.vSearchAnkunftsOrt_cbx_Enter);
+            this.vSearchAnkunftsOrt_cbx.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vSearchAnkunftsOrt_cbx_KeyUp);
+            this.vSearchAnkunftsOrt_cbx.Leave += new System.EventHandler(this.vSearchAnkunftsOrt_cbx_Leave);
             // 
             // vSearchAbfahrtsOrt_cbx
             // 
@@ -232,6 +235,9 @@
             this.vSearchAbfahrtsOrt_cbx.Size = new System.Drawing.Size(361, 36);
             this.vSearchAbfahrtsOrt_cbx.TabIndex = 1;
             this.vSearchAbfahrtsOrt_cbx.Text = "Abfahrtsort";
+            this.vSearchAbfahrtsOrt_cbx.Enter += new System.EventHandler(this.vSearchAbfahrtsOrt_cbx_Enter);
+            this.vSearchAbfahrtsOrt_cbx.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vSearchAbfahrtsOrt_cbx_KeyUp);
+            this.vSearchAbfahrtsOrt_cbx.Leave += new System.EventHandler(this.vSearchAbfahrtsOrt_cbx_Leave);
             // 
             // VerbindungForm
             // 

@@ -29,7 +29,7 @@
             get
             {
                 return $"mailto:{"mail@domain.com"}?subject={"Informationen für die Verbindung"}" +
-                    $"&body=Abfahrtsort ={this._Abfahrtsort} \n Ankunftsort ={this._Ankunftsort} \n Dauer ={this._Dauer} \n Verspaetung ={this._Verspaetung}";
+                    $"&body=Abfahrtsort ={this._Abfahrtsort} \n Ankunftsort ={this._Ankunftsort} \n Dauer ={this._Dauer} \n Verspätung ={this._Verspaetung}";
             }
         }
 

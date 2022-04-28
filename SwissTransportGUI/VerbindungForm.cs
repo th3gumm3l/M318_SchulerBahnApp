@@ -26,7 +26,6 @@ namespace SwissTransportGUI
         
         public StartseiteForm StartseiteForm { get; }
 
-
         private void vMainSearch_btn_Click(object sender, EventArgs e)
         {
             vSuchanzeigen_dgv.Rows.Clear();
@@ -44,7 +43,6 @@ namespace SwissTransportGUI
                     );
             }
         }
-
 
         private void VerbindungForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -71,5 +69,53 @@ namespace SwissTransportGUI
             mailing.OpenMailClientandFillIn();
         }
 
+        private void Autosuggestions(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            comboBox.SelectionStart = comboBox.Text.Length + 1;
+            var stations = transport.GetStations(comboBox.Text);
+
+            foreach (Station stationitem in stations.StationList)
+            {
+                comboBox.Items.Add(stationitem.Name);
+            }
+
+        }
+
+        private void vSearchAbfahrtsOrt_cbx_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (char.IsLetterOrDigit((char)e.KeyCode))
+            {
+                Autosuggestions(vSearchAbfahrtsOrt_cbx);
+            }
+        }
+
+        private void vSearchAnkunftsOrt_cbx_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (char.IsLetterOrDigit((char)e.KeyCode))
+            {
+                Autosuggestions(vSearchAnkunftsOrt_cbx);
+            }
+        }
+
+        private void vSearchAbfahrtsOrt_cbx_Enter(object sender, EventArgs e)
+        {
+            vSearchAbfahrtsOrt_cbx.DroppedDown = true;
+        }
+
+        private void vSearchAnkunftsOrt_cbx_Enter(object sender, EventArgs e)
+        {
+            vSearchAnkunftsOrt_cbx.DroppedDown = true;
+        }
+
+        private void vSearchAbfahrtsOrt_cbx_Leave(object sender, EventArgs e)
+        {
+            vSearchAbfahrtsOrt_cbx.DroppedDown = false;
+        }
+
+        private void vSearchAnkunftsOrt_cbx_Leave(object sender, EventArgs e)
+        {
+            vSearchAnkunftsOrt_cbx.DroppedDown = false;
+        }
     }
 }
