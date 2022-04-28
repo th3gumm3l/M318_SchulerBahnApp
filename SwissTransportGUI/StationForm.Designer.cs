@@ -37,7 +37,6 @@
             this.sSuchanzeigen_dgv = new System.Windows.Forms.DataGridView();
             this.Ankunftsort_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UhrzeitDatum_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passList_ColBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.sSuchanzeigen_gpbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sSuchanzeigen_dgv)).BeginInit();
@@ -50,29 +49,29 @@
             this.panel1.Controls.Add(this.sStationsuchen_cbx);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1330, 358);
+            this.panel1.Size = new System.Drawing.Size(716, 168);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(547, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(295, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 39);
+            this.label1.Size = new System.Drawing.Size(98, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Abfahrtstafel";
             // 
             // sMainSearch_btn
             // 
             this.sMainSearch_btn.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sMainSearch_btn.Location = new System.Drawing.Point(557, 226);
-            this.sMainSearch_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.sMainSearch_btn.Location = new System.Drawing.Point(300, 106);
+            this.sMainSearch_btn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.sMainSearch_btn.Name = "sMainSearch_btn";
-            this.sMainSearch_btn.Size = new System.Drawing.Size(186, 70);
+            this.sMainSearch_btn.Size = new System.Drawing.Size(100, 33);
             this.sMainSearch_btn.TabIndex = 1;
             this.sMainSearch_btn.Text = "Suchen";
             this.sMainSearch_btn.UseVisualStyleBackColor = true;
@@ -84,21 +83,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sStationsuchen_cbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sStationsuchen_cbx.FormattingEnabled = true;
-            this.sStationsuchen_cbx.Location = new System.Drawing.Point(414, 141);
-            this.sStationsuchen_cbx.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.sStationsuchen_cbx.Location = new System.Drawing.Point(223, 66);
+            this.sStationsuchen_cbx.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.sStationsuchen_cbx.Name = "sStationsuchen_cbx";
-            this.sStationsuchen_cbx.Size = new System.Drawing.Size(487, 36);
+            this.sStationsuchen_cbx.Size = new System.Drawing.Size(264, 24);
             this.sStationsuchen_cbx.TabIndex = 0;
             this.sStationsuchen_cbx.Text = "Station eingeben";
+            this.sStationsuchen_cbx.Enter += new System.EventHandler(this.sStationsuchen_cbx_Enter);
+            this.sStationsuchen_cbx.KeyUp += new System.Windows.Forms.KeyEventHandler(this.sStationsuchen_cbx_KeyUp);
+            this.sStationsuchen_cbx.Leave += new System.EventHandler(this.sStationsuchen_cbx_Leave);
             // 
             // sSuchanzeigen_gpbx
             // 
             this.sSuchanzeigen_gpbx.Controls.Add(this.sSuchanzeigen_dgv);
-            this.sSuchanzeigen_gpbx.Location = new System.Drawing.Point(11, 365);
-            this.sSuchanzeigen_gpbx.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.sSuchanzeigen_gpbx.Location = new System.Drawing.Point(6, 171);
+            this.sSuchanzeigen_gpbx.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.sSuchanzeigen_gpbx.Name = "sSuchanzeigen_gpbx";
-            this.sSuchanzeigen_gpbx.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.sSuchanzeigen_gpbx.Size = new System.Drawing.Size(1306, 715);
+            this.sSuchanzeigen_gpbx.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.sSuchanzeigen_gpbx.Size = new System.Drawing.Size(703, 335);
             this.sSuchanzeigen_gpbx.TabIndex = 1;
             this.sSuchanzeigen_gpbx.TabStop = false;
             this.sSuchanzeigen_gpbx.Text = "Suchanzeigen";
@@ -114,10 +116,9 @@
             this.sSuchanzeigen_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sSuchanzeigen_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ankunftsort_col,
-            this.UhrzeitDatum_col,
-            this.passList_ColBtn});
-            this.sSuchanzeigen_dgv.Location = new System.Drawing.Point(6, 38);
-            this.sSuchanzeigen_dgv.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.UhrzeitDatum_col});
+            this.sSuchanzeigen_dgv.Location = new System.Drawing.Point(3, 18);
+            this.sSuchanzeigen_dgv.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.sSuchanzeigen_dgv.Name = "sSuchanzeigen_dgv";
             this.sSuchanzeigen_dgv.ReadOnly = true;
             this.sSuchanzeigen_dgv.RowHeadersVisible = false;
@@ -126,7 +127,7 @@
             this.sSuchanzeigen_dgv.RowTemplate.Height = 41;
             this.sSuchanzeigen_dgv.RowTemplate.ReadOnly = true;
             this.sSuchanzeigen_dgv.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sSuchanzeigen_dgv.Size = new System.Drawing.Size(1285, 670);
+            this.sSuchanzeigen_dgv.Size = new System.Drawing.Size(692, 314);
             this.sSuchanzeigen_dgv.TabIndex = 0;
             // 
             // Ankunftsort_col
@@ -147,26 +148,17 @@
             this.UhrzeitDatum_col.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.UhrzeitDatum_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // passList_ColBtn
-            // 
-            this.passList_ColBtn.HeaderText = "Zwischenstationen";
-            this.passList_ColBtn.MinimumWidth = 10;
-            this.passList_ColBtn.Name = "passList_ColBtn";
-            this.passList_ColBtn.ReadOnly = true;
-            this.passList_ColBtn.Text = "Zwischenstationen";
-            this.passList_ColBtn.UseColumnTextForButtonValue = true;
-            // 
             // StationForm
             // 
             this.AcceptButton = this.sMainSearch_btn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 1090);
+            this.ClientSize = new System.Drawing.Size(716, 511);
             this.Controls.Add(this.sSuchanzeigen_gpbx);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StationForm";
@@ -191,6 +183,5 @@
         private Label label1;
         private DataGridViewTextBoxColumn Ankunftsort_col;
         private DataGridViewTextBoxColumn UhrzeitDatum_col;
-        private DataGridViewButtonColumn passList_ColBtn;
     }
 }

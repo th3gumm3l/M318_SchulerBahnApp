@@ -38,8 +38,7 @@ namespace SwissTransportGUI
                     connectionitem.From.Station.Name + "\n" + connectionitem.From.Departure,
                     connectionitem.To.Station.Name + "\n" + connectionitem.To.Arrival,
                     connectionitem.Duration,
-                    connectionitem.From.Platform,
-                    connectionitem.From.Delay
+                    connectionitem.From.Platform
                     );
             }
         }
@@ -58,11 +57,11 @@ namespace SwissTransportGUI
 
             var row = vSuchanzeigen_dgv.Rows[e.RowIndex];
 
-            string? Abfahrt = row.Cells[0].Value.ToString();
-            string? Ankunft = row.Cells[1].Value.ToString();
-            string? Dauer = row.Cells[2].Value.ToString();
-            string? Gleis = row.Cells[3].Value.ToString();
-            string? Verspätung = row.Cells[4].Value.ToString();
+            string? Abfahrt = row.Cells[0].Value?.ToString();
+            string? Ankunft = row.Cells[1].Value?.ToString();
+            string? Dauer = row.Cells[2].Value?.ToString();
+            string? Gleis = row.Cells[3].Value?.ToString();
+            string? Verspätung = row.Cells[4].Value?.ToString();
 
             Mailing mailing = new Mailing(Abfahrt, Ankunft, Dauer, Gleis, Verspätung);
 
@@ -71,13 +70,23 @@ namespace SwissTransportGUI
 
         private void Autosuggestions(ComboBox comboBox)
         {
-            comboBox.Items.Clear();
-            comboBox.SelectionStart = comboBox.Text.Length + 1;
-            var stations = transport.GetStations(comboBox.Text);
-
-            foreach (Station stationitem in stations.StationList)
+            try
             {
-                comboBox.Items.Add(stationitem.Name);
+                comboBox.Items.Clear();
+                comboBox.SelectionStart = comboBox.Text.Length + 1;
+                var stations = transport.GetStations(comboBox.Text);
+
+                foreach (Station stationitem in stations.StationList)
+                {
+                    comboBox.Items.Add(stationitem.Name);
+                }
+            }
+
+            catch
+            {
+                comboBox.Items.Clear();
+                comboBox.SelectionStart = comboBox.Text.Length + 1;
+                comboBox.Items.Add("Du bisch en Löli");
             }
 
         }

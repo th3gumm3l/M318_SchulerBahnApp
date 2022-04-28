@@ -45,5 +45,36 @@ namespace SwissTransportGUI
             }
         }
 
+        private void Autosuggestions(ComboBox comboBoxobjekt)
+        {
+            comboBoxobjekt.Items.Clear();
+            comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
+            var stations = transport.GetStations(comboBoxobjekt.Text);
+
+            foreach (Station stationitem in stations.StationList)
+            {
+                comboBoxobjekt.Items.Add(stationitem.Name);
+            }
+
+        }
+
+        private void sStationsuchen_cbx_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (char.IsLetterOrDigit((char)e.KeyCode))
+            {
+                Autosuggestions(sStationsuchen_cbx);
+            }
+        }
+
+        private void sStationsuchen_cbx_Enter(object sender, EventArgs e)
+        {
+            sStationsuchen_cbx.DroppedDown = true;
+        }
+
+        private void sStationsuchen_cbx_Leave(object sender, EventArgs e)
+        {
+            sStationsuchen_cbx.DroppedDown = false;
+        }
+
     }
 }
