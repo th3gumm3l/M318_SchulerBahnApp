@@ -59,12 +59,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(20, 23);
+            this.label1.Location = new System.Drawing.Point(547, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(385, 39);
+            this.label1.Size = new System.Drawing.Size(199, 39);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Geben Sie ihre Station ein";
+            this.label1.Text = "Abfahrtstafel";
             // 
             // sMainSearch_btn
             // 
@@ -164,9 +164,13 @@
             this.ClientSize = new System.Drawing.Size(1330, 1090);
             this.Controls.Add(this.sSuchanzeigen_gpbx);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "StationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schuber BahnApp";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StationForm_FormClosing);
             this.panel1.ResumeLayout(false);

@@ -41,7 +41,7 @@
             this.SbbLogoPic_imgbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SbbLogoPic_imgbx.Image = ((System.Drawing.Image)(resources.GetObject("SbbLogoPic_imgbx.Image")));
-            this.SbbLogoPic_imgbx.Location = new System.Drawing.Point(80, 34);
+            this.SbbLogoPic_imgbx.Location = new System.Drawing.Point(99, 34);
             this.SbbLogoPic_imgbx.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.SbbLogoPic_imgbx.Name = "SbbLogoPic_imgbx";
             this.SbbLogoPic_imgbx.Size = new System.Drawing.Size(800, 271);
@@ -54,7 +54,7 @@
             this.Verbindungen_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.Verbindungen_btn.FlatAppearance.BorderSize = 0;
             this.Verbindungen_btn.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Verbindungen_btn.Location = new System.Drawing.Point(80, 335);
+            this.Verbindungen_btn.Location = new System.Drawing.Point(99, 339);
             this.Verbindungen_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Verbindungen_btn.Name = "Verbindungen_btn";
             this.Verbindungen_btn.Size = new System.Drawing.Size(381, 250);
@@ -70,7 +70,7 @@
             this.Stationen_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.Stationen_btn.FlatAppearance.BorderSize = 0;
             this.Stationen_btn.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Stationen_btn.Location = new System.Drawing.Point(500, 335);
+            this.Stationen_btn.Location = new System.Drawing.Point(519, 339);
             this.Stationen_btn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Stationen_btn.Name = "Stationen_btn";
             this.Stationen_btn.Size = new System.Drawing.Size(381, 250);
@@ -85,7 +85,7 @@
             this.LetzteReisen_lbx.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LetzteReisen_lbx.FormattingEnabled = true;
             this.LetzteReisen_lbx.ItemHeight = 28;
-            this.LetzteReisen_lbx.Location = new System.Drawing.Point(80, 608);
+            this.LetzteReisen_lbx.Location = new System.Drawing.Point(99, 612);
             this.LetzteReisen_lbx.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.LetzteReisen_lbx.Name = "LetzteReisen_lbx";
             this.LetzteReisen_lbx.Size = new System.Drawing.Size(799, 368);
@@ -100,9 +100,13 @@
             this.Controls.Add(this.Stationen_btn);
             this.Controls.Add(this.Verbindungen_btn);
             this.Controls.Add(this.SbbLogoPic_imgbx);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "StartseiteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schuler BahnApp";
             ((System.ComponentModel.ISupportInitialize)(this.SbbLogoPic_imgbx)).EndInit();
             this.ResumeLayout(false);

@@ -247,9 +247,13 @@
             this.ClientSize = new System.Drawing.Size(1894, 1009);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.vSuchanzeigen_gpbx);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "VerbindungForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schuler BahnApp";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerbindungForm_FormClosing);
             this.vSuchanzeigen_gpbx.ResumeLayout(false);

@@ -58,11 +58,11 @@ namespace SwissTransportGUI
 
             var row = vSuchanzeigen_dgv.Rows[e.RowIndex];
 
-            string Abfahrt = row.Cells[0].Value?.ToString();
-            string Ankunft = row.Cells[1].Value?.ToString();
-            string Dauer = row.Cells[2].Value?.ToString();
-            string Gleis = row.Cells[3].Value?.ToString();
-            string Verspätung = row.Cells[4].Value?.ToString();
+            string? Abfahrt = row.Cells[0].Value.ToString();
+            string? Ankunft = row.Cells[1].Value.ToString();
+            string? Dauer = row.Cells[2].Value.ToString();
+            string? Gleis = row.Cells[3].Value.ToString();
+            string? Verspätung = row.Cells[4].Value.ToString();
 
             Mailing mailing = new Mailing(Abfahrt, Ankunft, Dauer, Gleis, Verspätung);
 
