@@ -47,13 +47,23 @@ namespace SwissTransportGUI
 
         private void Autosuggestions(ComboBox comboBoxobjekt)
         {
-            comboBoxobjekt.Items.Clear();
-            comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
-            var stations = transport.GetStations(comboBoxobjekt.Text);
-
-            foreach (Station stationitem in stations.StationList)
+            try
             {
-                comboBoxobjekt.Items.Add(stationitem.Name);
+                comboBoxobjekt.Items.Clear();
+                comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
+                var stations = transport.GetStations(comboBoxobjekt.Text);
+
+                foreach (Station stationitem in stations.StationList)
+                {
+                    comboBoxobjekt.Items.Add(stationitem.Name);
+                }
+            }
+
+            catch
+            {
+                comboBoxobjekt.Items.Clear();
+                comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
+                comboBoxobjekt.Items.Add("Keine Ergebnisse");
             }
 
         }

@@ -62,16 +62,16 @@
 
         private T GetObject<T>(Uri uri)
         {
-            HttpResponseMessage response = this.httpClient
-                .GetAsync(uri)
-                .GetAwaiter()
-                .GetResult();
-            string content = response.Content
-                .ReadAsStringAsync()
-                .GetAwaiter()
-                .GetResult();
+                HttpResponseMessage response = this.httpClient
+                    .GetAsync(uri)
+                    .GetAwaiter()
+                    .GetResult();
+                string content = response.Content
+                    .ReadAsStringAsync()
+                    .GetAwaiter()
+                    .GetResult();
 
-            return JsonConvert.DeserializeObject<T>(content);
+                return JsonConvert.DeserializeObject<T>(content);
         }
     }
 }
