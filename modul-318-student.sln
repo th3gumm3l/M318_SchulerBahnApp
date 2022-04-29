@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwissTransportTest", "tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwissTransportGUI", "SwissTransportGUI\SwissTransportGUI.csproj", "{0846336A-0445-4F26-8F7D-09A969ECB043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailingTest", "MailingTest\MailingTest.csproj", "{719B4B7B-7068-4310-9F2E-60A7AF2A2830}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailingTest", "MailingTest\MailingTest.csproj", "{719B4B7B-7068-4310-9F2E-60A7AF2A2830}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSchulerBahnApp", "SetupSchulerBahnApp\SetupSchulerBahnApp.vdproj", "{957B89BB-C4E5-4B04-89EC-25BECB519547}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,8 @@ Global
 		{719B4B7B-7068-4310-9F2E-60A7AF2A2830}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{719B4B7B-7068-4310-9F2E-60A7AF2A2830}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{719B4B7B-7068-4310-9F2E-60A7AF2A2830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{957B89BB-C4E5-4B04-89EC-25BECB519547}.Debug|Any CPU.ActiveCfg = Debug
+		{957B89BB-C4E5-4B04-89EC-25BECB519547}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
