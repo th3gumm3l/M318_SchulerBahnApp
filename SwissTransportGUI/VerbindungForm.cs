@@ -79,16 +79,30 @@ namespace SwissTransportGUI
 
         private void Autosuggestions(ComboBox comboBoxObjekt)
         {
+            if (string.IsNullOrEmpty(comboBoxObjekt.Text) )
+            {
+                return;
+            }
+            
             try
             {
                 comboBoxObjekt.Items.Clear();
                 comboBoxObjekt.SelectionStart = comboBoxObjekt.Text.Length + 1;
                 var stations = transport.GetStations(comboBoxObjekt.Text);
 
+                if (stations.StationList.Count == 0)
+                {
+                    comboBoxObjekt.Items.Clear();
+                    comboBoxObjekt.SelectionStart = comboBoxObjekt.Text.Length + 1;
+                    comboBoxObjekt.Items.Add("Keine Ergebnisse");
+                    return;
+                }
+
                 foreach (Station stationItem in stations.StationList)
                 {
                     comboBoxObjekt.Items.Add(stationItem.Name);
                 }
+
             }
 
             catch
@@ -98,7 +112,7 @@ namespace SwissTransportGUI
                 comboBoxObjekt.Items.Add("Keine Ergebnisse");
             }
 
-        }
+}
 
         private void vSearchAbfahrtsOrt_cbx_KeyUp(object sender, KeyEventArgs e)
         {
