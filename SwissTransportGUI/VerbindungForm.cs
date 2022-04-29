@@ -28,18 +28,27 @@ namespace SwissTransportGUI
 
         private void vMainSearch_btn_Click(object sender, EventArgs e)
         {
-            vSuchanzeigen_dgv.Rows.Clear();
-
-            var ConnectionsListe = transport.GetConnections(vSearchAbfahrtsOrt_cbx.Text, vSearchAnkunftsOrt_cbx.Text, datePicker.Value, timePicker.Value);
-
-            foreach (Connection connectionitem in ConnectionsListe.ConnectionList)
+            try
             {
-                vSuchanzeigen_dgv.Rows.Add(
-                    connectionitem.From.Station.Name + "\n" + connectionitem.From.Departure,
-                    connectionitem.To.Station.Name + "\n" + connectionitem.To.Arrival,
-                    connectionitem.Duration,
-                    connectionitem.From.Platform
-                    );
+                vSuchanzeigen_dgv.Rows.Clear();
+
+                var connectionsListe = transport.GetConnections(vSearchAbfahrtsOrt_cbx.Text, vSearchAnkunftsOrt_cbx.Text, datePicker.Value, timePicker.Value);
+
+                foreach (Connection connectionItem in connectionsListe.ConnectionList)
+                {
+                    vSuchanzeigen_dgv.Rows.Add(
+                        connectionItem.From.Station.Name + "\n" + connectionItem.From.Departure,
+                        connectionItem.To.Station.Name + "\n" + connectionItem.To.Arrival,
+                        connectionItem.Duration,
+                        connectionItem.From.Platform
+                        );
+                }
+            }
+
+            catch
+            {
+
+                MessageBox.Show("Keine Internetverbindung");
             }
         }
 
@@ -57,36 +66,36 @@ namespace SwissTransportGUI
 
             var row = vSuchanzeigen_dgv.Rows[e.RowIndex];
 
-            string? Abfahrt = row.Cells[0].Value?.ToString();
-            string? Ankunft = row.Cells[1].Value?.ToString();
-            string? Dauer = row.Cells[2].Value?.ToString();
-            string? Gleis = row.Cells[3].Value?.ToString();
-            string? Verspätung = row.Cells[4].Value?.ToString();
+            string? abfahrt = row.Cells[0].Value?.ToString();
+            string? ankunft = row.Cells[1].Value?.ToString();
+            string? dauer = row.Cells[2].Value?.ToString();
+            string? gleis = row.Cells[3].Value?.ToString();
+            string? verspätung = row.Cells[4].Value?.ToString();
 
-            Mailing mailing = new Mailing(Abfahrt, Ankunft, Dauer, Gleis, Verspätung);
+            Mailing mailing = new Mailing(abfahrt, ankunft, dauer, gleis, verspätung);
 
             mailing.OpenMailClientandFillIn();
         }
 
-        private void Autosuggestions(ComboBox comboBoxobjekt)
+        private void Autosuggestions(ComboBox comboBoxObjekt)
         {
             try
             {
-                comboBoxobjekt.Items.Clear();
-                comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
-                var stations = transport.GetStations(comboBoxobjekt.Text);
+                comboBoxObjekt.Items.Clear();
+                comboBoxObjekt.SelectionStart = comboBoxObjekt.Text.Length + 1;
+                var stations = transport.GetStations(comboBoxObjekt.Text);
 
-                foreach (Station stationitem in stations.StationList)
+                foreach (Station stationItem in stations.StationList)
                 {
-                    comboBoxobjekt.Items.Add(stationitem.Name);
+                    comboBoxObjekt.Items.Add(stationItem.Name);
                 }
             }
 
             catch
             {
-                comboBoxobjekt.Items.Clear();
-                comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
-                comboBoxobjekt.Items.Add("Keine Ergebnisse");
+                comboBoxObjekt.Items.Clear();
+                comboBoxObjekt.SelectionStart = comboBoxObjekt.Text.Length + 1;
+                comboBoxObjekt.Items.Add("Keine Ergebnisse");
             }
 
         }

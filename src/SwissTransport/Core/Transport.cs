@@ -39,7 +39,7 @@
             return this.GetObject<StationBoardRoot>(uri);
         }
 
-        public Connections GetConnections(string fromStation, string toStation, DateTime date, DateTime time)
+        public Connections GetConnections(string fromStation, string toStation, DateTime? date, DateTime? time)
         {
             if (string.IsNullOrEmpty(fromStation))
             {

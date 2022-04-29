@@ -9,19 +9,19 @@
 
     public class Mailing
     {
-        private string _Abfahrtsort;
-        private string _Ankunftsort;
-        private string _Dauer;
-        private string _Gleis;
-        private string _Verspaetung;
+        private string _abfahrtsort;
+        private string _ankunftsort;
+        private string _dauer;
+        private string _gleis;
+        private string _verspaetung;
 
-        public Mailing(string Abfahrtsort, string Ankunftsort, string Dauer, string Gleis, string Verspaetung)
+        public Mailing(string abfahrtsort, string ankunftsort, string dauer, string gleis, string verspaetung)
         {
-            this._Abfahrtsort = Abfahrtsort;
-            this._Ankunftsort = Ankunftsort;
-            this._Dauer = Dauer;
-            this._Gleis = Gleis;
-            this._Verspaetung = Verspaetung;
+            this._abfahrtsort = abfahrtsort;
+            this._ankunftsort = ankunftsort;
+            this._dauer = dauer;
+            this._gleis = gleis;
+            this._verspaetung = verspaetung;
         }
 
         public string Url
@@ -29,8 +29,8 @@
             get
             {
                 return $"mailto:{"mail@domain.com"}?subject={"Informationen für die Verbindung"}" +
-                    $"&body=Abfahrtsort ={this._Abfahrtsort} \n Ankunftsort ={this._Ankunftsort} \n " +
-                    $"Dauer ={this._Dauer} \n Gleis ={this._Gleis}\n Verspätung ={this._Verspaetung}";
+                    $"&body=Abfahrtsort ={this._abfahrtsort} \n Ankunftsort ={this._ankunftsort} \n " +
+                    $"Dauer ={this._dauer} \n Gleis ={this._gleis}\n Verspätung ={this._verspaetung}";
             }
         }
 

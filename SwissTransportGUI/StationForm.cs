@@ -31,39 +31,47 @@ namespace SwissTransportGUI
 
         private void sMainSearch_btn_Click(object sender, EventArgs e)
         {
-            sSuchanzeigen_dgv.Rows.Clear();
-            
-            var stationBoard = transport.GetStationBoard(sStationsuchen_cbx.Text, sStationsuchen_cbx.Text);
-
-            foreach (StationBoard stationBoarditem in stationBoard.Entries)
-            {
-                sSuchanzeigen_dgv.Rows.Add(
-
-                    stationBoarditem.To,
-                    stationBoarditem.Stop.Departure
-                    );
-            }
-        }
-
-        private void Autosuggestions(ComboBox comboBoxobjekt)
-        {
             try
             {
-                comboBoxobjekt.Items.Clear();
-                comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
-                var stations = transport.GetStations(comboBoxobjekt.Text);
-
-                foreach (Station stationitem in stations.StationList)
+                sSuchanzeigen_dgv.Rows.Clear();
+                var stationBoard = transport.GetStationBoard(sStationsuchen_cbx.Text, sStationsuchen_cbx.Text);
+                foreach (StationBoard stationBoardItem in stationBoard.Entries)
                 {
-                    comboBoxobjekt.Items.Add(stationitem.Name);
+                    sSuchanzeigen_dgv.Rows.Add(
+
+                        stationBoardItem.To,
+                        stationBoardItem.Stop.Departure
+                        );
                 }
             }
 
             catch
             {
-                comboBoxobjekt.Items.Clear();
-                comboBoxobjekt.SelectionStart = comboBoxobjekt.Text.Length + 1;
-                comboBoxobjekt.Items.Add("Keine Ergebnisse");
+                MessageBox.Show("Keine Internetverbindung");
+            }
+
+        }
+
+        private void Autosuggestions(ComboBox comboBoxObjekt)
+        {
+            try
+            {
+                comboBoxObjekt.Items.Clear();
+                comboBoxObjekt.SelectionStart = comboBoxObjekt.Text.Length + 1;
+
+                var stations = transport.GetStations(comboBoxObjekt.Text);
+
+                foreach (Station stationItem in stations.StationList)
+                {
+                    comboBoxObjekt.Items.Add(stationItem.Name);
+                }
+            }
+
+            catch
+            {
+                comboBoxObjekt.Items.Clear();
+                comboBoxObjekt.SelectionStart = comboBoxObjekt.Text.Length + 1;
+                comboBoxObjekt.Items.Add("Keine Ergebnisse");
             }
 
         }
