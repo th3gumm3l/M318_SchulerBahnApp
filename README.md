@@ -23,4 +23,4 @@ No documentation in the actual sense is required. However, a document containing
 The documentation should be neatly designed, correct in content and clearly structured. Pay attention to typography and spelling!
 
 ## Full Documentation (DE)
-(./doc/Dokumentation_M318.docx)
+[Documentation](./doc/Dokumentation_M318.docx)
