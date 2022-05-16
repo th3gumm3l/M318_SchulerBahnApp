@@ -25,3 +25,6 @@ The documentation should be neatly designed, correct in content and clearly stru
 
 ## Full Documentation (DE)
 [Documentation](./doc)
+
+## License
+Project is [MIT licensed](./LICENSE)
