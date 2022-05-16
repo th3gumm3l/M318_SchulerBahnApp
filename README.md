@@ -1,4 +1,5 @@
 # M318 SchulerBahnApp
+[Link for Module](https://m318.ict-bz.ch/)
 
 ## Project
 The aim of this exercise is to programme an application that uses the timetable data of the Swiss public transport system. The application should make it possible to search for transport connections between two stations. The assessment of this project work is the basis for the final grade.
