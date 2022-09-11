@@ -22,5 +22,10 @@ namespace SwissTransportGUI
 
             this.Hide();
         }
+
+        private void SbbLogoPic_imgbx_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
